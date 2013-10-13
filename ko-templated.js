@@ -3,8 +3,11 @@
     function definer($, ko) {
         var loading = {}, loaded = {};
         ko.bindingHandlers.templated = {
-            init:function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
-                var templated = valueAccessor();
+            update:function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+                var
+                    value = valueAccessor(),
+                    templated = ko.utils.unwrapObservable(value);
+
 
                 var templatePath = templated.templatePath ? ko.utils.unwrapObservable(templated.templatePath) : 'templates/',
                     templateName = templated.templateName ? ko.utils.unwrapObservable(templated.templateName) : (
@@ -18,7 +21,7 @@
 
                     var nodes = ko.utils.parseHtmlFragment(loaded[url]);
                     ko.virtualElements.setDomNodeChildren(element, nodes);
-                    ko.applyBindingsToDescendants(bindingContext.createChildContext(templated), element);
+                    ko.applyBindingsToDescendants(bindingContext.createChildContext(value), element);
                     if (templated.afterRender) templated.afterRender(element, nodes);
 
                 }

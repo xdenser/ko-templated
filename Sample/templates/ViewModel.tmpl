@@ -1,2 +1,14 @@
 <p data-bind='text: sampleText'></p>
 <input type='text' data-bind='value: sampleText'>
+<!-- ko templated: sampleText -->
+<!-- /ko -->
+<!-- ko templated: num -->
+<!-- /ko -->
+
+<button data-bind='click:putNumber'>Put Number</button>
+<table data-bind='foreach: arr'>
+    <tr>
+      <td data-bind='templated: $data'></td>
+    </tr>
+</table>
+

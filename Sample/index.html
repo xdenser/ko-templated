@@ -7,8 +7,19 @@
     <script src='../ko-templated.js'></script>
     <script>
 
+        function ComplexType(num,str){
+            this.num = num;
+            this.str = str;
+        }
+
         function ViewModel(){
+            var self = this;
             this.sampleText = ko.observable('Hello world !');
+            this.num = 10;
+            this.putNumber = function(){
+                self.sampleText(20);
+            }
+            this.arr = ko.observableArray(["One",1,"Two",new ComplexType(4,"Four")]);
         }
 
         $(function(){
