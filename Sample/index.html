@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Sample ko-templated binding</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='http://knockoutjs.com/downloads/knockout-2.3.0.js'></script>
+    <script src='../ko-templated.js'></script>
+    <script>
+
+        function ViewModel(){
+            this.sampleText = ko.observable('Hello world !');
+        }
+
+        $(function(){
+            ko.applyBindings(new ViewModel());
+        })
+    </script>
+</head>
+<body data-bind='templated: $data'>
+</body>
+</html>
