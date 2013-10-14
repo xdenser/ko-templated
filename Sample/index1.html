@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <zscript src='http://knockoutjs.com/downloads/knockout-3.0.0rc.debug.js'></zscript>
+    <script src='http://knockoutjs.com/downloads/knockout-2.3.0.js'></script>
+
+    <script src='../ko-templated.js'></script>
+    <script type="text/javascript">
+
+        function Test2(){
+
+        }
+
+
+        function Test1(){
+            this.txt = 'world'
+            this.vm = ko.observable();
+        }
+
+        function Test(){
+            this.txt = 'hello'
+            this.sub = new Test1();
+        }
+
+        var m = new Test(),
+                vm = {
+            view: ko.observable(),
+            setv: function(){
+                this.view(m)
+            },
+            setv1:function(){
+                this.view(m.sub)
+            }
+        }
+        vm.view.subscribe(function(v){
+           console.log(v);
+        });
+
+        $(function(){
+        ko.applyBindings(vm);
+        });
+    </script>
+</head>
+<body>
+
+
+      <div data-bind='templated: view'>
+
+      </div>
+
+
+  <button data-bind='click:setv'>Do</button>
+  <button data-bind='click:setv1'>Do1</button>
+</body>
+</html>
