@@ -1,11 +1,10 @@
-
-###ko-templated is binding for [knockout](http://knockoutjs.com/).
+###ko-templated is a binding for [knockout](http://knockoutjs.com/).
 
 ##Description
 
 Allows asynchronous loading of templates.
-Uses jQuery for templates loading.
-The main idea is to use view model or sub model constructor name as name of template.
+Uses jQuery for template loading.
+The main idea is to use view model's or sub model's constructor name as name of template.
 Binding encourages using of `new` for constructing view models or sub models.  
 So when you try to use it on plain javascript object it will load "Object.tmpl".
 You may override naming convention by defining `templateName` property in object.
