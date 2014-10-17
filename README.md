@@ -1,4 +1,6 @@
 ###ko-templated is a binding for [knockout](http://knockoutjs.com/).
+##Install
+npm install ko-templated
 
 ##Description
 
