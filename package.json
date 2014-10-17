@@ -1,0 +1,23 @@
+{
+  "name": "ko-templated",
+  "version": "0.0.1",
+  "description": "Binding for knockoutJs. Allows imlicit templates, i.e. load with ajax from templates dir or attach template source to ViewModule as string.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xdenser/ko-templated.git"
+  },
+  "keywords": [
+    "knockoutjs",
+    "templates"
+  ],
+  "author": "Denys Khanzhyiev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xdenser/ko-templated/issues"
+  },
+  "homepage": "https://github.com/xdenser/ko-templated"
+}
